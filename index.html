@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumière du Monde - Lumière de Dieu</title>
   <style>
-    /* Styles généraux */
+    /* Reset & Styles généraux */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,72 +14,38 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
+      background-color: #0b0f19;
       color: #ffffff;
       line-height: 1.6;
     }
 
-    /* Section En-tête / Hero */
+    /* En-tête */
     header {
-      background: linear-gradient(180deg, #020b30 0%, #081226 100%);
-      padding: 40px 20px 30px 20px;
+      background: linear-gradient(180deg, #020720 0%, #0b0f19 100%);
+      padding: 50px 20px 40px 20px;
       text-align: center;
-      border-bottom: 1px solid #1a2638;
+      border-bottom: 1px solid #1e293b;
     }
 
-    .hero-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    /* Bloc Profil (Photo + Nom) */
-    .profile-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .profile-card img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #3b82f6;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-
-    .profile-card .profile-name {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #93c5fd;
-      letter-spacing: 0.5px;
-    }
-
-    /* Titres de l'en-tête */
     .hero-title {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .hero-subtitle {
       font-size: 1.1rem;
       color: #94a3b8;
       max-width: 600px;
+      margin: 0 auto;
     }
 
-    /* Menu de Navigation */
+    /* Navigation */
     nav {
-      background-color: #08101e;
+      background-color: #030712;
       padding: 15px 10px;
-      border-bottom: 1px solid #1e293b;
+      border-bottom: 1px solid #1f2937;
     }
 
     .nav-links {
@@ -99,10 +65,10 @@
     }
 
     .nav-links a:hover {
-      color: #60a5fa;
+      color: #3b82f6;
     }
 
-    /* Section Contenu Principal */
+    /* Contenu principal */
     main {
       max-width: 1000px;
       margin: 40px auto;
@@ -116,46 +82,62 @@
       color: #ffffff;
     }
 
-    /* Adaptation pour grands écrans (mode côte à côte) */
-    @media (min-width: 768px) {
-      .hero-container {
-        flex-direction: row-reverse;
-        justify-content: space-around;
+    /* Section Accompagnement Spirituel / Bas de document */
+    .footer-profile-section {
+      margin-top: 60px;
+      padding: 30px 20px;
+      background-color: #111827;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .footer-profile-img {
+      width: 150px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-profile-text {
+      font-size: 1.15rem;
+      color: #e2e8f0;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .footer-profile-text strong {
+      color: #60a5fa;
+      font-size: 1.25rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Écrans plus larges (Tablette & Ordinateur) */
+    @media (min-width: 600px) {
+      .footer-profile-section {
+        flex-direction: row;
         text-align: left;
-      }
-
-      .hero-text {
-        flex: 1;
-      }
-
-      .hero-title {
-        font-size: 2.8rem;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- EN-TÊTE DU SITE -->
+  <!-- EN-TÊTE DU SITE (INTACT) -->
   <header>
-    <div class="hero-container">
-      
-      <!-- PHOTO DE PROFIL ET NOM (Monsieur Dan) -->
-      <div class="profile-card">
-        <img src="monsieur_dan.jpg" alt="Monsieur Dan">
-        <span class="profile-name">Monsieur Dan</span>
-      </div>
-
-      <!-- TEXTE PRINCIPAL DE L'EN-TÊTE -->
-      <div class="hero-text">
-        <h1 class="hero-title">Lumière du Monde<br>- Lumière de Dieu</h1>
-        <p class="hero-subtitle">Enseignements spirituels, prière et édification de la foi</p>
-      </div>
-
-    </div>
+    <h1 class="hero-title">Lumière du Monde<br>- Lumière de Dieu</h1>
+    <p class="hero-subtitle">Enseignements spirituels, prière et édification de la foi</p>
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION (INTACTE) -->
   <nav>
     <ul class="nav-links">
       <li><a href="#foi">La Foi</a></li>
@@ -165,11 +147,18 @@
     </ul>
   </nav>
 
-  <!-- SECTION ENSEIGNEMENTS -->
+  <!-- CONTENU PRINCIPAL -->
   <main>
     <h2 class="section-title">Nos Enseignements Spirituels</h2>
-    
-    <!-- Vous pouvez continuer à placer vos cartes d'enseignements ici -->
+
+    <!-- AJOUT EN BAS DU DOCUMENT -->
+    <section class="footer-profile-section">
+      <img src="monsieur_dan.jpg" alt="Monsieur Dan" class="footer-profile-img">
+      <div class="footer-profile-text">
+        <strong>Monsieur Dan</strong>
+        <p>Prêt pour vous accompagner dans votre marche spirituelle et dans l'amour du Seigneur Jésus-Christ.</p>
+      </div>
+    </section>
 
   </main>
 
