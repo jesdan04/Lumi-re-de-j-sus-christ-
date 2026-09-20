@@ -1,239 +1,52 @@
-https://formspree.io/f/mzezeebb
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumière du Monde - Enseignements & Foi</title>
+    <title>Lumière du Monde</title>
     <style>
-        :root {
-            --primary: #1A365D;
-            --accent: #D69E2E;
-            --bg-light: #F7FAFC;
-            --text-dark: #2D3748;
-            --white: #FFFFFF;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 2.5rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        nav {
-            background: #2B6CB0;
-            padding: 0.75rem;
-            text-align: center;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .section-title {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--accent);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .paywall-banner {
-            background: linear-gradient(135deg, var(--primary), #2B6CB0);
-            color: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        .paywall-banner h2 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .btn-pay {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--primary);
-            font-weight: bold;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 1.5rem;
-        }
-
-        .btn-pay:hover {
-            background-color: #B7791F;
-            color: var(--white);
-        }
-
-        .contact-section {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-top: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #CBD5E0;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .btn-submit {
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .btn-submit:hover {
-            background-color: #2B6CB0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--primary);
-            color: var(--white);
-            margin-top: 4rem;
-        }
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
+        .section { margin-bottom: 30px; }
+        .paywall-banner { background: #f4f4f4; padding: 20px; border-radius: 8px; }
+        .btn-pay { display: inline-block; background: #0066cc; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 4px; }
+        .contact-section { background: #fafafa; padding: 20px; border-radius: 8px; }
+        input[type="email"], textarea { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        button { background: #28a745; color: #fff; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Lumière du Monde - Lumière de Dieu</h1>
-        <p>Enseignements spirituels, prière et édification de la foi</p>
-    </header>
-
-    <nav>
-        <a href="#enseignements">Enseignements</a>
-        <a href="#abonnement">Abonnement</a>
-        <a href="#contact">Contact & Questions</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- Enseignements -->
-        <section id="enseignements">
-            <h2 class="section-title">Nos Modules d'Enseignement</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>1. La Prière Efficace</h3>
-                    <p>Découvrez les principes bibliques pour structurer vos prières quotidiennes et développer une communion intime avec Dieu.</p>
-                </div>
-                <div class="card">
-                    <h3>2. Marcher dans la Foi</h3>
-                    <p>Comment surmonter les épreuves, garder la foi face aux obstacles et vivre pleinement les promesses divines au quotidien.</p>
-                </div>
-                <div class="card">
-                    <h3>3. Croissance Spirituelle</h3>
-                    <p>Les étapes essentielles pour mûrir spirituellement, méditer la Parole et vivre en disciple accompli.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Abonnement / Paywall -->
-        <section id="abonnement">
-            <div class="paywall-banner">
-                <h2>Accédez à l'Intégralité des Enseignements</h2>
-                <p>Abonnez-vous pour débloquer l'accès complet aux guides de prière, méditations quotidiennes et accompagnement spirituel personnalisé.</p>
-                <a href="#contact" class="btn-pay">S'abonner maintenant / Accès Payant</a>
-            </div>
-        </section>
-
-        <!-- Contact & Formulaire -->
-        <section id="contact" class="contact-section">
-            <h2 class="section-title">Poser une Question ou Contacter l'Auteur</h2>
-            <p style="margin-bottom: 1.5rem;">Avez-vous une question sur un enseignement ou un besoin de prière ? Envoyez votre message ci-dessous :</p>
-            
-            <form action="https://formspree.io/f/mzezeebb" method="POST">
-  <!-- Vos champs de formulaire (nom, email, message, etc.) -->
-  <input type="email" name="email" placeholder="Votre email" required>
-  <textarea name="message" placeholder="Votre message" required></textarea>
-  <button type="submit">Envoyer</button>
-</form>
-
-        </section>
-
+    <div class="section">
+        <p>Les étapes essentielles pour mûrir spirituellement</p>
     </div>
+
+    <!-- Abonnement / Paywall -->
+    <section id="abonnement" class="section">
+        <div class="paywall-banner">
+            <h2>Accédez à l'Intégralité des Enseignements</h2>
+            <p>Abonnez-vous pour débloquer l'accès complet</p>
+            <a href="#contact" class="btn-pay">S'abonner maintenant</a>
+        </div>
+    </section>
+
+    <!-- Contact & Formulaire -->
+    <section id="contact" class="contact-section section">
+        <h2 class="section-title">Poser une Question ou Contacter l'Auteur</h2>
+        <p style="margin-bottom: 1.5rem;">Avez-vous une question ou un besoin de prière ?</p>
+
+        <form action="https://formspree.io/f/mzezeebb" method="POST">
+            <!-- Redirection vers la page de remerciement après l'envoi -->
+            <input type="hidden" name="_next" value="merci.html">
+
+            <label for="email">Votre email :</label>
+            <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+            <label for="message">Votre message :</label>
+            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
 
     <footer>
         <p>&copy; 2026 Lumière du Monde. Tous droits réservés.</p>
