@@ -1,350 +1,324 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumière du Monde - Lumière de Dieu</title>
-  <style>
-    /* Reset & Styles généraux */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière du Monde - Enseignements & Méditations</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --text-dark: #0f172a;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0f19;
-      color: #f1f5f9;
-      line-height: 1.7;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    /* En-tête */
-    header {
-      background: linear-gradient(180deg, #020720 0%, #0b0f19 100%);
-      padding: 50px 20px 40px 20px;
-      text-align: center;
-      border-bottom: 1px solid #1e293b;
-    }
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-    .hero-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
 
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: #94a3b8;
-      max-width: 650px;
-      margin: 0 auto;
-    }
+        header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-top: 10px;
+        }
 
-    /* Navigation */
-    nav {
-      background-color: #030712;
-      padding: 15px 10px;
-      border-bottom: 1px solid #1f2937;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        nav {
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      list-style: none;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    .nav-links a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
 
-    .nav-links a:hover {
-      color: #3b82f6;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-    /* Container Principal */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: #ffffff;
-      border-bottom: 2px solid #1e293b;
-      padding-bottom: 10px;
-    }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
 
-    /* Cartes des enseignements */
-    .teaching-card {
-      background-color: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 35px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    }
+        .card-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
 
-    .teaching-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+        .card-content {
+            padding: 30px;
+        }
 
-    .teaching-content {
-      padding: 25px;
-    }
+        .card-content h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
 
-    .teaching-title {
-      font-size: 1.6rem;
-      color: #60a5fa;
-      margin-bottom: 15px;
-    }
+        .bible-verse {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
 
-    .teaching-text {
-      color: #cbd5e1;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
+        .bible-verse span {
+            display: block;
+            font-weight: bold;
+            font-style: normal;
+            margin-top: 5px;
+            color: var(--primary-color);
+            text-align: right;
+        }
 
-    /* Section Formulaire de Contact (Formspree) */
-    .contact-section {
-      background-color: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      padding: 30px;
-      margin-top: 50px;
-    }
+        /* Section Auteur */
+        .author-section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
 
-    .contact-section h3 {
-      font-size: 1.6rem;
-      color: #ffffff;
-      margin-bottom: 15px;
-      text-align: center;
-    }
+        .author-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
 
-    .contact-section p {
-      text-align: center;
-      color: #94a3b8;
-      margin-bottom: 25px;
-    }
+        .author-signature {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 15px;
+            font-style: italic;
+        }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+        .contact-section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #e2e8f0;
-      font-weight: 500;
-    }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 15px;
-      background-color: #030712;
-      border: 1px solid #374151;
-      border-radius: 8px;
-      color: #ffffff;
-      font-size: 1rem;
-    }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #3b82f6;
-    }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
 
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background-color: #2563eb;
-      color: #ffffff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        button.btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
 
-    .submit-btn:hover {
-      background-color: #1d4ed8;
-    }
+        button.btn-submit:hover {
+            background-color: #1d4ed8;
+        }
 
-    /* Section Profil de Fin (Photo et message de Dan) */
-    .author-footer {
-      margin-top: 60px;
-      padding: 35px 25px;
-      background: linear-gradient(135deg, #111827 0%, #030712 100%);
-      border-radius: 16px;
-      border: 1px solid #2563eb40;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .author-avatar-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .author-img {
-      width: 160px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid #3b82f6;
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
-    }
-
-    .author-name {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-top: 12px;
-      letter-spacing: 0.5px;
-    }
-
-    .author-message {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      max-width: 650px;
-      font-style: italic;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #64748b;
-      font-size: 0.9rem;
-      border-top: 1px solid #1e293b;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 650px) {
-      .author-footer {
-        flex-direction: row;
-        text-align: left;
-        padding: 40px;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0f172a;
+            color: white;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- EN-TÊTE DU SITE -->
-  <header>
-    <h1 class="hero-title">Lumière du Monde - Lumière de Dieu</h1>
-    <p class="hero-subtitle">Enseignements spirituels, prière et édification de la foi</p>
-  </header>
+    <header>
+        <h1>Lumière du Monde - Lumière de Dieu</h1>
+        <p>Enseignements spirituels, prière et édification de la foi</p>
+    </header>
 
-  <!-- MENU NAVIGATION -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#foi">La Foi</a></li>
-      <li><a href="#priere">La Prière</a></li>
-      <li><a href="#crainte">La Crainte de Dieu</a></li>
-      <li><a href="#louange">La Louange</a></li>
-      <li><a href="#contact">Contact & Questions</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <a href="#foi">La Foi</a>
+        <a href="#priere">La Prière</a>
+        <a href="#crainte">La Crainte de Dieu</a>
+        <a href="#auteur">L'Auteur</a>
+        <a href="#contact">Contact & Questions</a>
+    </nav>
 
-  <!-- CONTENU PRINCIPAL -->
-  <main>
-    <h2 class="section-title">Nos Enseignements Spirituels</h2>
+    <div class="container">
 
-    <!-- MODULE 1 : LA FOI -->
-    <article id="foi" class="teaching-card">
-      <img src="https://images.unsplash.com/photo-1509021436468-d5100742183d?auto=format&fit=crop&w=900&q=80" alt="La Foi biblique" class="teaching-img">
-      <div class="teaching-content">
-        <h3 class="teaching-title">1. La Foi : Définition & Aspects Bibliques</h3>
-        <p class="teaching-text"><strong>Définition :</strong> Selon Hébreux 11:1, <em>« La foi est une ferme assurance des choses qu'on espère, une démonstration de celles qu'on ne voit pas. »</em> Elle est le fondement de la relation entre l'homme et Dieu.</p>
-        <p class="teaching-text"><strong>Marcher dans la foi :</strong> C'est avancer au quotidien en s'appuyant fermement sur les promesses de Dieu, quelles que soient les circonstances visibles ou les épreuves traversées.</p>
-      </div>
-    </article>
+        <h2 class="section-title">Nos Enseignements Spirituels</h2>
 
-    <!-- MODULE 2 : LA PRIÈRE -->
-    <article id="priere" class="teaching-card">
-      <img src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?auto=format&fit=crop&w=900&q=80" alt="La Prière Efficace" class="teaching-img">
-      <div class="teaching-content">
-        <h3 class="teaching-title">2. La Prière Efficace</h3>
-        <p class="teaching-text">La prière n'est pas une simple répétition de paroles, mais un dialogue intime et sincère avec le Père céleste. Jésus nous enseigne à prier avec foi, persévérance et selon la volonté de Dieu.</p>
-      </div>
-    </article>
+        <!-- Module 1 : La Foi -->
+        <article id="foi" class="card">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=80" alt="La Foi" class="card-img">
+            <div class="card-content">
+                <h2>1. Marcher dans la Foi</h2>
+                <p>
+                    La foi est la fondation de la vie chrétienne. Elle consiste à faire une confiance totale à Dieu et à s'appuyer sur Ses promesses, même quand les réalités visibles semblent complexes.
+                </p>
 
-    <!-- MODULE 3 : LA CRAINTE DE DIEU -->
-    <article id="crainte" class="teaching-card">
-      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80" alt="La Crainte de Dieu" class="teaching-img">
-      <div class="teaching-content">
-        <h3 class="teaching-title">3. La Crainte de Dieu</h3>
-        <p class="teaching-text">La crainte du Seigneur est le commencement de la sagesse (Proverbes 9:10). Il ne s'agit pas d'une peur servile, mais d'un profond respect, d'une révérence sainte et du désir de lui plaire en tout temps.</p>
-      </div>
-    </article>
+                <div class="bible-verse">
+                    « Or la foi est une ferme assurance des choses qu'on espère, une démonstration de celles qu'on ne voit pas. »
+                    <span>— Hébreux 11:1 (Louis Segond)</span>
+                </div>
 
-    <!-- MODULE 4 : LA LOUANGE -->
-    <article id="louange" class="teaching-card">
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80" alt="La Louange de Dieu" class="teaching-img">
-      <div class="teaching-content">
-        <h3 class="teaching-title">4. La Louange et l'Adoration</h3>
-        <p class="teaching-text">La louange libère la présence divine et brise les chaînes spirituelles. Adorer Dieu en esprit et en vérité transforme notre cœur et élève notre âme vers le Tout-Puissant.</p>
-      </div>
-    </article>
+                <div class="bible-verse">
+                    « Ainsi la foi vient de ce qu'on entend, et ce qu'on entend vient de la parole de Christ. »
+                    <span>— Romains 10:17 (Louis Segond)</span>
+                </div>
+            </div>
+        </article>
 
-    <!-- FORMULAIRE DE CONTACT AVEC VOTRE FORMULAIRE FORMSPREE EXACT -->
-    <section id="contact" class="contact-section">
-      <h3>Poser une Question ou Contacter l'Auteur</h3>
-      <p>Avez-vous une question sur un enseignement ou un besoin de prière ? Envoyez votre message ci-dessous :</p>
-      
-      <form action="https://formspree.io/f/x4081014" method="POST">
-        <div class="form-group">
-          <label for="email">Votre adresse e-mail :</label>
-          <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Votre question ou sujet de prière :</label>
-          <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Envoyer mon message</button>
-      </form>
-    </section>
+        <!-- Module 2 : La Prière -->
+        <article id="priere" class="card">
+            <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?auto=format&fit=crop&w=1000&q=80" alt="La Prière" class="card-img">
+            <div class="card-content">
+                <h2>2. La Prière Efficace</h2>
+                <p>
+                    Prier, c'est développer une communion intime avec le Père céleste. Ce n'est pas réciter des formules, mais ouvrir son cœur à Dieu avec sincérité pour recevoir sa grâce et sa direction au quotidien.
+                </p>
 
-    <!-- SECTION DE FIN : PHOTO ET NOM DE DAN -->
-    <section class="author-footer">
-      <div class="author-avatar-wrapper">
-        <img src="monsieur_dan.jpg" alt="Dan" class="author-img">
-        <div class="author-name">Dan</div>
-      </div>
-      <div class="author-message">
-        <p>« Prêt pour vous accompagner dans votre marche spirituelle et dans l'amour du Seigneur Jésus-Christ. »</p>
-      </div>
-    </section>
+                <div class="bible-verse">
+                    « Ne vous inquiétez de rien; mais en toute chose faites connaître vos besoins à Dieu par des prières et des supplications, avec des actions de grâces. »
+                    <span>— Philippiens 4:6 (Louis Segond)</span>
+                </div>
 
-  </main>
+                <div class="bible-verse">
+                    « Mais quand tu pries, entre dans ta chambre, ferme ta porte, et prie ton Père qui est là dans le lieu secret; et ton Père, qui voit dans le secret, te le rendra. »
+                    <span>— Matthieu 6:6 (Louis Segond)</span>
+                </div>
+            </div>
+        </article>
 
-  <footer>
-    <p>&copy; 2026 Lumière du Monde - Lumière de Dieu. Tous droits réservés.</p>
-  </footer>
+        <!-- Module 3 : La Crainte de Dieu -->
+        <article id="crainte" class="card">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80" alt="La Crainte de Dieu" class="card-img">
+            <div class="card-content">
+                <h2>3. Marcher dans la Crainte du Seigneur</h2>
+                <p>
+                    La crainte de Dieu est un respect profond et un amour saint qui nous poussent à rejeter le mal et à chercher à plaire au Seigneur dans toute notre conduite.
+                </p>
+
+                <div class="bible-verse">
+                    « La crainte de l'Éternel est le commencement de la sagesse; Tous ceux qui l'observent ont une raison saine. Sa gloire subsiste à jamais. »
+                    <span>— Psaume 111:10 (Louis Segond)</span>
+                </div>
+
+                <div class="bible-verse">
+                    « La crainte de l'Éternel, c'est la haine du mal; L'arrogance et l'orgueil, la voie du mal, Et la bouche perverse, voilà ce que je hais. »
+                    <span>— Proverbes 8:13 (Louis Segond)</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Section Auteur avec Photo -->
+        <section id="auteur" class="author-section">
+            <!-- Remplacez le lien src ci-dessous par le lien de votre photo -->
+            <img src="https://votre-image.com/votre-photo.jpg" alt="Photo de l'auteur" class="author-img">
+            <h2>À propos de votre serviteur</h2>
+            <p>
+                Que la paix et la grâce du Seigneur soient avec vous. Mon désir est de partager la vérité de la Parole de Dieu pour fortifier votre foi et vous soutenir dans votre marche spirituelle quotidienne.
+            </p>
+            <p class="author-signature">Cordialement, votre frère Dan pour vous accompagner</p>
+        </section>
+
+        <!-- Formulaire de Contact existant relié à Formspree -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Poser une Question ou Contacter l'Auteur</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                Avez-vous une question sur un enseignement ou un besoin de conseils spirituels / prière ? Envoyez votre message ci-dessous :
+            </p>
+
+            <form action="https://formspree.io/f/mzezeebb" method="POST">
+                <div class="form-group">
+                    <label for="email">Votre adresse e-mail :</label>
+                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre question ou sujet de prière :</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer mon message</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Lumière du Monde. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
